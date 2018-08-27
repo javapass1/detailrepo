@@ -1,0 +1,25 @@
+
+1. First application certificate 
+
+keystorenmae : firstapp
+
+keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore firstapp.p12 -validity 365
+
+password : firstapppass
+What is your first and last name :   first app
+What is the name of your organizational unit :  first app unit
+What is the name of your organization :  firstapp org
+What is the name of your City or Locality :  Toronto
+What is the name of your State or Province :  ON
+What is the two-letter country code for this unit :  CA
+Is CN=first app, OU=first app unit, O=firstapp org, L=Toronto, ST=ON, C=CA correct?
+
+
+
+truststorenmae : tsfirstapp
+
+storepass : tstapppass
+
+
+keytool -import -alias PublicKeyFromGree -file democlient.cer -keystore MyPublicKey.store
+keytool -import -alias PublicKeyFromGree -file democlient.cer -keystore MyPublicKey.store
